@@ -111,3 +111,25 @@ void Contador(void){
 if (digitalRead(Boton2)== LOW){
     if (ContadorBoton1>0){
       ContadorBoton1 = ContadorBoton1-15;
+
+          }
+
+    else if(ContadorBoton1 <=0){
+      ContadorBoton1=255;
+    }
+    }
+}
+void Impresion(void){
+  Serial.print("Rojo: ");
+  Serial.print(" ");
+  Serial.print(V1);
+  Serial.print(" ");
+  Serial.print("Azul");
+  Serial.print(" ");
+  Serial.print(Potenciometro);
+  Serial.print(" ");
+  Serial.print("Verde");
+  Serial.print(" ");
+  Serial.println(ContadorBoton1);
+
+}
