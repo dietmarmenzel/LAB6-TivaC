@@ -45,3 +45,17 @@ long SampleTime2 = 250;
 
 long LastTime3; 
 long SampleTime3=2; 
+
+//*****************************************************************************
+// Configuración
+//*****************************************************************************
+void setup() {
+  Serial3.begin(115200);
+  Serial.begin(115200);
+  // put your setup code here, to run once:
+  pinMode(Boton1, INPUT_PULLUP); 
+  pinMode(Boton2, INPUT_PULLUP);
+  LastTime = millis(); 
+  LastTime2 = millis();
+  LastTime3 =millis();
+}
