@@ -29,3 +29,19 @@
 void Contador(void);
 
 void Impresion(void);
+
+//*****************************************************************************
+// Variables Globales
+//*****************************************************************************
+int ContadorBoton1 = 0; //Contador Boton en entero
+int Potenciometro = 0;
+int V1= 0; 
+
+long LastTime;
+long SampleTime = 250;
+
+long LastTime2;
+long SampleTime2 = 250;
+
+long LastTime3; 
+long SampleTime3=2; 
