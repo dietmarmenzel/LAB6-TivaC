@@ -59,3 +59,26 @@ void setup() {
   LastTime2 = millis();
   LastTime3 =millis();
 }
+
+//*****************************************************************************
+// Loop Principal
+//*****************************************************************************
+void loop() {
+  if (millis()-LastTime >= SampleTime){
+    
+    Potenciometro = analogRead(pot2); //Voltaje para el potenciómetro 
+    Potenciometro = map(Potenciometro, 0,4095,0,255);
+
+    
+    Serial3.write(Potenciometro);
+    Serial3.print('\t');
+    Serial3.write(ContadorBoton1);
+    Serial3.print('\n');
+  
+    //Recibo de datos
+    if (Serial3.available()>0){
+      V1 = Serial3.read(); 
+    }
+      
+    LastTime = millis();
+  }
