@@ -82,3 +82,32 @@ void loop() {
       
     LastTime = millis();
   }
+
+    if (millis()-LastTime2 >= SampleTime2){
+    Impresion();
+    LastTime2 = millis();
+  }
+
+  if (millis()-LastTime3 >= SampleTime3){
+    analogWrite(Rojo, V1);
+    analogWrite(Azul,Potenciometro);
+    analogWrite(Verde, ContadorBoton1);
+    Contador();
+    LastTime3 = millis();
+  }
+}
+
+void Contador(void){
+  if (digitalRead(Boton1)== LOW){
+    if (ContadorBoton1<255){
+      ContadorBoton1 = ContadorBoton1+15;
+
+    }
+
+    else if(ContadorBoton1 >=255){
+      ContadorBoton1=0;
+    }
+  }
+if (digitalRead(Boton2)== LOW){
+    if (ContadorBoton1>0){
+      ContadorBoton1 = ContadorBoton1-15;
